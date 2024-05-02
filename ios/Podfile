@@ -9,7 +9,7 @@ target 'Runner' do
   pod 'GoogleMaps'
 
   # Add pods for other dependencies
-  pod 'geolocator', '~> 11.0.0'
+  # pod 'geolocator', '~> 11.0.0'
   pod 'camera', '~> 0.10.5'
   pod 'path_provider', '~> 2.1.3'
   pod 'geocoding', '~> 3.0.0'
