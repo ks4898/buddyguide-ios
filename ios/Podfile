@@ -23,11 +23,11 @@ flutter_ios_podfile_setup
 
 target 'Runner' do
   # Pods for Flutter application
-  pod 'Flutter', :path => '../'
-  pod 'FlutterPluginRegistrant', :path => '../'
+  pod 'Flutter', :path => '../Flutter'
+  pod 'FlutterPluginRegistrant', :path => '../Flutter'
 
   # Add your Flutter plugins
-  pod 'geolocator', '~> 7.0.3'
+  pod 'geolocator', '~> 11.0.0'
   pod 'google_maps_flutter', '~> 2.6.1'
   pod 'weather', '~> 3.1.1'
   pod 'intl', '~> 0.19.0'
