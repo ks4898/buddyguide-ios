@@ -14,3 +14,9 @@ target 'Runner' do
   end
 
 end
+
+  # Add pods for other dependencies
+  pod 'geolocator', '~> 7.6.2'
+  pod 'camera', '~> 0.10.5'
+  pod 'path_provider', '~> 2.1.3'
+  pod 'geocoding', '~> 0.6.0'
