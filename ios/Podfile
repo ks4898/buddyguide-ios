@@ -7,12 +7,6 @@ target 'Runner' do
 
   # Pods for Runner
   pod 'GoogleMaps'
-  pod 'weather'
-  pod 'intl'
-  pod 'google_fonts'
-  pod 'camera'
-  pod 'path_provider'
-  pod 'geocoding'
 
   target 'RunnerTests' do
     inherit! :search_paths
