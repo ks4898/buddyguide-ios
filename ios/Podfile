@@ -6,6 +6,15 @@ target 'Runner' do
   use_frameworks!
 
   # Pods for Runner
+  pod 'cupertino_icons'
+  pod 'geolocator'
+  pod 'GoogleMaps'
+  pod 'weather'
+  pod 'intl'
+  pod 'google_fonts'
+  pod 'camera'
+  pod 'path_provider'
+  pod 'geocoding'
 
   target 'RunnerTests' do
     inherit! :search_paths
