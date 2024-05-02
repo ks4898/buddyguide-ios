@@ -21,7 +21,7 @@ require File.expand_path(File.join('packages', 'flutter_tools', 'bin', 'podhelpe
 
 flutter_ios_podfile_setup
 
-target 'project' do
+target 'Runner' do
   # Pods for Flutter application
   pod 'Flutter', :path => '../'
   pod 'FlutterPluginRegistrant', :path => '../'
@@ -37,10 +37,10 @@ target 'project' do
   pod 'geocoding', '~> 3.0.0'
 end
 
-target 'projectTests' do
+target 'RunnerTests' do
   # Pods for testing
 end
 
-target 'projectUITests' do
+target 'RunnerUITests' do
   # Pods for testing
 end
