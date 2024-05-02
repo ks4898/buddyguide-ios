@@ -57,7 +57,7 @@ class _MainSkeletonState extends State<MainSkeleton> {
   Widget build(BuildContext context) {
     Widget? currScreenWidget;
     if (currScreen == "location") {
-      currScreenWidget = const LocationScreen();
+      currScreenWidget = LocationScreen();
     } else if (currScreen == "home") {
       currScreenWidget = HomeScreen(
         toSpots: switchToSpots,
