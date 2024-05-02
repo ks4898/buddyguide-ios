@@ -40,7 +40,3 @@ end
 target 'RunnerTests' do
   # Pods for testing
 end
-
-target 'RunnerUITests' do
-  # Pods for testing
-end
