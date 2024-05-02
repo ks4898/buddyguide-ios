@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:camera/camera.dart';
 import 'package:project/screens/location_screen.dart';
 import 'package:project/screens/home_screen.dart';
 import 'package:project/screens/feed_screen.dart';
@@ -9,14 +8,10 @@ import 'package:project/enums/style_constants.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class MainSkeleton extends StatefulWidget {
-  final List<CameraDescription> cameraList;
-
-  const MainSkeleton({super.key, required this.cameraList});
+  const MainSkeleton({Key? key}) : super(key: key);
 
   @override
-  State<MainSkeleton> createState() {
-    return _MainSkeletonState();
-  }
+  State<MainSkeleton> createState() => _MainSkeletonState();
 }
 
 class _MainSkeletonState extends State<MainSkeleton> {
@@ -60,16 +55,9 @@ class _MainSkeletonState extends State<MainSkeleton> {
 
   @override
   Widget build(BuildContext context) {
-    List<void Function()> navFunctions = [
-      switchToHome,
-      switchToMap,
-      switchToFeed,
-      switchToWaste,
-    ];
-
     Widget? currScreenWidget;
     if (currScreen == "location") {
-      currScreenWidget = const LocationScreen();
+      currScreenWidget = LocationScreen();
     } else if (currScreen == "home") {
       currScreenWidget = HomeScreen(
         toSpots: switchToSpots,
@@ -77,7 +65,7 @@ class _MainSkeletonState extends State<MainSkeleton> {
         toWaste: switchToWaste,
       );
     } else if (currScreen == "feed") {
-      currScreenWidget = FeedScreen(cameraList: widget.cameraList);
+      currScreenWidget = const FeedScreen();
     } else if (currScreen == "spots") {
       currScreenWidget = const SpotsScreen();
     } else {
@@ -121,13 +109,28 @@ class _MainSkeletonState extends State<MainSkeleton> {
           destinations: [
             for (var i = 0; i < imgPaths.length; i++)
               GestureDetector(
-                onTap: navFunctions[i],
+                onTap: () {
+                  switch (i) {
+                    case 0:
+                      switchToHome();
+                      break;
+                    case 1:
+                      switchToMap();
+                      break;
+                    case 2:
+                      switchToFeed();
+                      break;
+                    case 3:
+                      switchToWaste();
+                      break;
+                  }
+                },
                 child: Image.asset(
                   imgPaths[i],
                   width: 40,
                   height: 40,
                   opacity: AlwaysStoppedAnimation(
-                    imgPaths[i].contains(currScreen) ? .5 : 1,
+                    currScreen.contains(imgPaths[i]) ? .5 : 1,
                   ),
                 ),
               ),
