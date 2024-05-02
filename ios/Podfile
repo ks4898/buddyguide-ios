@@ -6,7 +6,6 @@ target 'Runner' do
   use_frameworks!
 
   # Pods for Runner
-  pod 'geolocator'
   pod 'GoogleMaps'
   pod 'weather'
   pod 'intl'
